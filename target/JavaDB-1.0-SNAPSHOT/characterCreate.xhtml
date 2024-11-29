@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      lang="en">
+<ui:composition template="template.xhtml">
+    <ui:define name="title">Characters</ui:define>
+
+     <ui:define name="content">
+      <!-- Подключение стилей CSS -->
+      <h:outputStylesheet name="css/form_style.css" />
+          <div class="main">
+       <div class="form-container">
+      <h:form>
+        <h:outputText value="Create New Character" styleClass="form-title" />
+        
+       
+            <!-- Поле "Name" -->
+            <h:outputLabel for="name" value="Name" />
+            <h:inputText id="name" value="#{charactersBean.selectedCharacter.name}" styleClass="form-input" />
+
+            <!-- Поле "Full Name" -->
+            <h:outputLabel for="fullName" value="Full Name" />
+            <h:inputText id="fullName" value="#{charactersBean.selectedCharacter.fullName}" styleClass="form-input" />
+
+            <!-- Поле "Age" -->
+            <h:outputLabel for="age" value="Age" />
+            <h:inputText id="age" value="#{charactersBean.selectedCharacter.age}" styleClass="form-input" />
+
+            <!-- Поле "Gender" -->
+            <h:outputLabel for="gender" value="Gender" />
+            <h:inputText id="gender" value="#{charactersBean.selectedCharacter.gender}" styleClass="form-input" />
+
+            <!-- Поле "Race" -->
+            <h:outputLabel for="race" value="Race" />
+            <h:inputText id="race" value="#{charactersBean.selectedCharacter.race}" styleClass="form-input" />
+            
+            <!-- Поле "Biography" -->
+            <h:outputLabel for="biography" value="Biography" />
+            <h:inputTextarea id="biography" value="#{charactersBean.selectedCharacter.biography}" styleClass="form-textarea" />
+            
+            <!-- Поле "Image" -->
+            <h:outputLabel for="image" value="Image" />
+            <h:inputText id="image" value="#{charactersBean.selectedCharacter.image}" styleClass="form-input" />
+
+        
+        
+      
+            <h:commandButton value="Save" action="#{charactersBean.createCharacter}" styleClass="form-button" />
+      </h:form>
+             </div>
+                       </div>
+    </ui:define>
+</ui:composition>
+</html>

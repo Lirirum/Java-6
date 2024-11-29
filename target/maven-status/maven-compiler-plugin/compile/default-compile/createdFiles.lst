@@ -1,0 +1,9 @@
+entity\Characters.class
+bean\UserCounterListener.class
+bean\UserCounterBean.class
+com\mycompany\javadb\resources\JakartaEE10Resource.class
+bean\CharactersBean.class
+com\mycompany\javadb\JakartaRestConfiguration.class
+bean\TimerBean.class
+entity\service\CharactersFacadeREST.class
+entity\service\AbstractFacade.class

@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      lang="en">
+<ui:composition template="template.xhtml">
+    <ui:define name="title">Characters</ui:define>
+
+    <ui:define name="content">
+        <h:outputStylesheet name="css/data.css" />
+       <h:dataTable value="#{charactersBean.charactersList}" var="character">
+        <h:column>
+            <f:facet name="header">Name</f:facet>
+            #{character.name}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">Full Name</f:facet>
+            #{character.fullName}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">Age</f:facet>
+            #{character.age}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">Gender</f:facet>
+            #{character.gender}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">Race</f:facet>
+            #{character.race}
+        </h:column>
+         
+        <h:column>
+            <f:facet name="header">Biography</f:facet>
+            #{character.biography}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Image</f:facet>
+            <h:outputText value="#{character.image}" />
+        </h:column>
+           
+           <h:column>
+               <h:form>
+                <h:commandButton value="Delete" action="#{charactersBean.deleteCharacter(character)}" styleClass="button delete-button" />
+                  </h:form>
+            </h:column>
+           
+            <h:column>
+            <h:form>
+                <h:commandButton value="Edit" action="#{charactersBean.editCharacter(character)}"  styleClass="button button-edit" />
+            </h:form>
+            </h:column>
+    </h:dataTable>
+    </ui:define>
+</ui:composition>
+</html>
